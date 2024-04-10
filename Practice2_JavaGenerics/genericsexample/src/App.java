@@ -3,75 +3,55 @@ import org.w3c.dom.Node;
 public class App {
     
     //// countStringOccurences method
-    private static String countStringOccurences(String[] array, String target){
+    private static int countStringOccurences(String[] array, String target){
         int occurences = 0;
-        for( int i = 0; i < array.length; i++){
+        /*for( int i = 0; i < array.length; i++){
             if(array[i] == target){
                 occurences += 1;
             }
+        }*/
+        for(String t : array){
+            if(t.equals(target)){
+                occurences++;
+            }
         }
-        System.out.println(occurences);
-        return target;
+        return occurences;
     }
     //// countIntegerOccurences method
     private static int countIntegerOccurences(Integer[] array, Integer target){
         int occurences = 0;
-        for( int i = 0; i < array.length; i++){
+        /*for( int i = 0; i < array.length; i++){
             if(array[i] == target){
                 occurences += 1;
             }
+        }*/
+        for(Integer t : array){
+            if(t.equals(target)){
+                occurences++;
+            }
         }
-        System.out.println(occurences);
-        return target;
+        return occurences;
     }
 
     //// countOccurences method
     private static <T> int countOccurences(T[] array, T target){
         int occurences = 0;
-        for( int i = 0; i < array.length; i++){
+        /*for( int i = 0; i < array.length; i++){
             if(array[i] == target){
                 occurences += 1;
             }
+        }*/
+        for(T t : array){
+            if(t.equals(target)){
+                occurences++;
+            }
         }
-        System.out.println(occurences);
-        return (int) target;
+        return occurences;
     }
 
 
 
-    //.. Practice writing a generics class
-    //// Node class
-    public class Node<T> {
-        private Node<T> next;
-        private T data;
 
-        public Node(T value){
-            this.data = value;
-        }
-
-
-
-        // Get the data field
-        public T getData(){
-            return data;
-        }
-
-        //Set the data field
-        public void setData(T value){
-            this.data = value;
-        }
-
-        // Get the next node
-        public Node<T> getNext(){
-            return next;
-        }
-
-        // Set the next node
-        public void setNext(Node<T> n){
-            this.next = n;
-        }
-
-    }
 
     public static void main(String[] args) throws Exception {
         //// System.out.println("Hello, World!");
@@ -81,10 +61,20 @@ public class App {
         String[] stringArray = {"car", "house", "table", "chair", "city", "car", "car", "computer", "house"};
 
         // Occurences tests
-        countIntegerOccurences(intArray, 4);
-        countStringOccurences(stringArray, "car");
-        countOccurences(intArray, 100);
+        int count1 = countIntegerOccurences(intArray, 4);
+        System.out.println("Count 1: " + count1);
 
+        int count2 = countStringOccurences(stringArray, "car");
+        System.out.println("Count 2: " + count2);
+        
+        int count3 = countOccurences(intArray, 100);
+        int count4 = countOccurences(stringArray, "house");
+        System.out.println("Count 3: " + count3);
+        System.out.println("Count 4: " + count4);
+
+        
+        
+        
         // Node tests
         Node<Integer> n1 = new Node<Integer>(5);
         Node<Integer> n2 = new Node<Integer>(20);
