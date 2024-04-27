@@ -6,18 +6,16 @@ public class App {
     public static void main(String[] args) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(
-                    "C:\\Users\\tuwan\\OneDrive\\Desktop\\CS401_Spring24\\Algorithms\\Assignment1\\Wangia_Thomas_Assignment1\\src\\sample3.txt"));
-            int n = reader.readLine().length();
-            reader.close();
+                    "C:\\Users\\tuwan\\OneDrive\\Desktop\\CS401_Spring24\\Algorithms\\Assignment1\\Wangia_Thomas_Assignment1\\src\\sample1.txt"));
+            int n = reader.readLine().length(); // Checking size of array to be created
+            reader.close(); // Closing reader to reread the first line as a string
             reader = new BufferedReader(new FileReader(
-                    "C:\\Users\\tuwan\\OneDrive\\Desktop\\CS401_Spring24\\Algorithms\\Assignment1\\Wangia_Thomas_Assignment1\\src\\sample3.txt"));
+                    "C:\\Users\\tuwan\\OneDrive\\Desktop\\CS401_Spring24\\Algorithms\\Assignment1\\Wangia_Thomas_Assignment1\\src\\sample1.txt"));
 
-            //System.out.println("N is :" + n);
             int[][] soil = new int[n][n];
 
             for (int i = 0; i < n; i++) {
                 String line = reader.readLine();
-                //System.out.println("i: " + i);
                 for (int j = 0; j < n; j++) {
                     soil[i][j] = Character.getNumericValue(line.charAt(j));
                 }
