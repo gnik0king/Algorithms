@@ -72,7 +72,6 @@ public class SoilWaterDrainage {
                 return false; // Soil doesn't allow water to drain
             }
         }
-
         return true; // Soil allows water to drain
     }
 }
